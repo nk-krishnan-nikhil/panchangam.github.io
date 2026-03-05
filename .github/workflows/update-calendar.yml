@@ -1,0 +1,37 @@
+﻿name: Update Malayalam Panchangam Calendar
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 0 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  update-calendar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate calendar file (next 730 days)
+        run: |
+          python scripts/generate_malayalam_calendar.py \
+            --start "$(date +%F)" \
+            --days 730 \
+            --output public/malayalam-panchangam.ics
+
+      - name: Update generated timestamp
+        run: date -u +"%Y-%m-%d %H:%M UTC" > public/generated-at.txt
+
+      - name: Commit updates if changed
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: refresh Malayalam Panchangam calendar"
+          file_pattern: public/malayalam-panchangam.ics public/generated-at.txt

@@ -1,0 +1,113 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Malayalam Panchangam Calendar</title>
+  <style>
+    :root {
+      --bg1: #f7efe2;
+      --bg2: #f2d3a2;
+      --ink: #1f1a14;
+      --accent: #8f2d14;
+      --accent-2: #3f6b2f;
+      --card: rgba(255, 255, 255, 0.78);
+      --ring: rgba(143, 45, 20, 0.2);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Georgia", "Noto Serif Malayalam", serif;
+      color: var(--ink);
+      background: radial-gradient(circle at 20% 20%, var(--bg2), var(--bg1));
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+    .card {
+      width: min(860px, 100%);
+      background: var(--card);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--ring);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(1.7rem, 4vw, 2.4rem);
+      line-height: 1.2;
+    }
+    .sub {
+      margin: 0 0 20px;
+      color: #3b3127;
+    }
+    .cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 18px 0 14px;
+    }
+    .btn {
+      appearance: none;
+      border: 0;
+      border-radius: 10px;
+      padding: 10px 14px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 0.12s ease, opacity 0.12s ease;
+    }
+    .btn:hover { transform: translateY(-1px); opacity: 0.95; }
+    .btn-main {
+      background: var(--accent);
+      color: #fff;
+    }
+    .btn-alt {
+      background: var(--accent-2);
+      color: #fff;
+    }
+    code {
+      display: block;
+      padding: 12px;
+      border-radius: 10px;
+      background: #fff7eb;
+      border: 1px solid #edd8b5;
+      overflow: auto;
+      font-size: 0.92rem;
+    }
+    ol {
+      margin-top: 8px;
+      padding-left: 18px;
+    }
+    .muted {
+      color: #5a4f43;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>മലയാളം പഞ്ചാംഗം Calendar</h1>
+    <p class="sub">Daily Panchangam feed you can subscribe to in Google Calendar.</p>
+
+    <div class="cta">
+      <a class="btn btn-main" href="./malayalam-panchangam.ics">Download .ics</a>
+      <a class="btn btn-alt" href="webcal://REPLACE_WITH_YOUR_DOMAIN/malayalam-panchangam.ics">Open in Calendar (webcal)</a>
+    </div>
+
+    <p><strong>Public URL:</strong></p>
+    <code>https://REPLACE_WITH_YOUR_DOMAIN/malayalam-panchangam.ics</code>
+
+    <p><strong>Add to Google Calendar:</strong></p>
+    <ol>
+      <li>Open Google Calendar.</li>
+      <li>Other calendars -> From URL.</li>
+      <li>Paste your public .ics URL.</li>
+      <li>Click Add calendar.</li>
+    </ol>
+
+    <p class="muted">Tip: Replace <code>REPLACE_WITH_YOUR_DOMAIN</code> after enabling GitHub Pages.</p>
+  </main>
+</body>
+</html>
