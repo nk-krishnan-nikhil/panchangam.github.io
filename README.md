@@ -8,11 +8,11 @@ This project generates a **Malayalam Panchangam** calendar feed (`.ics`) that ca
 
 ## What This Includes
 
-- Daily Panchangam details per date
+- Multi-event daily layout (date, Nakshatra segments, Rahukalam, sunrise/sunset)
 - Malayalam solar date (Kollavarsham + month + day)
-- Tithi, Nakshatra, Yoga, Karana
-- Sunrise, Sunset
-- Rahukalam, Gulikakalam, Yamagandam
+- Separate observance events: Ekadashi, Pradosham, Purnima, Amavasya
+- Styled Panchangam summary event with emojis
+- Daily Malayalam spiritual quote event
 - Era year references (Saka, Vikrama, Kali)
 
 ## 1. Generate the Calendar File
@@ -74,3 +74,4 @@ To use it:
 
 - Calculations are location-sensitive; keep latitude/longitude aligned with your target city.
 - This is a computational Panchangam feed using Surya Siddhanta style formulas and can vary slightly from specific printed almanacs.
+
